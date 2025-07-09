@@ -32,29 +32,25 @@ export default function LandingPage() {
         `}</style>
       </Head>
 
-      <div className="bg-[#f8f7f4] text-[#1A2B42] flex items-center justify-center min-h-screen p-4">
-        <div className="absolute inset-0 bg-pattern opacity-10"></div>
+      <div className="bg-[#f8f7f4] text-[#1A2B42] flex flex-col justify-between min-h-screen p-4 relative">
+        <div className="absolute inset-0 bg-pattern opacity-10 pointer-events-none z-0"></div>
 
-        <main className="w-full max-w-2xl text-center z-10">
+        {/* Logo - Topo */}
+        <div className="flex justify-center items-start w-full mx-auto pt-8 z-10">
+          <Image src="/logo.png" alt="Logo Lare" width={200} height={200} className="size-60 object-contain" priority />
+        </div>
 
-          {/* Logo - Espaçamento ajustado para melhor equilíbrio visual */}
-          <div className="mb-16 flex justify-center items-center w-full mx-auto">
-            {/* Componente Image otimizado */}
-            <Image src="/logo.png" alt="Logo Lare" width={200} height={200} className="size-60 object-contain" priority />
-          </div>
-
-          {/* Título Principal */}
-          <h1 className="font-serif-display text-4xl md:text-6xl font-bold text-[#1A2B42] leading-tight">
+        {/* Conteúdo Central */}
+        <main className="w-full max-w-2xl text-center mx-auto flex flex-col items-center justify-center flex-1 z-10">
+          <h1 className="font-serif-display text-4xl md:text-4xl font-bold text-[#1A2B42] leading-tight mt-4 mb-4">
             La gestione immobiliare sta per cambiare.
           </h1>
-
-          {/* Subtítulo */}
-          <p className="mt-6 text-lg md:text-xl text-gray-600 max-w-xl mx-auto">
+          <p className="mb-8 text-lg md:text-xl text-gray-600 max-w-xl mx-auto">
             Lare è la piattaforma digitale che restituisce tranquillità e controllo ai proprietari di casa. Stiamo costruendo un guardiano digitale per il tuo patrimonio.
           </p>
 
           {/* Formulário de Captura de Email com Formspree */}
-          <div className="mt-12">
+          <div className="mt-12 mb-8 w-full">
             <p className="mb-4 font-semibold">Sii tra i primi a scoprirlo.</p>
             <form
               className="flex flex-col sm:flex-row justify-center max-w-md mx-auto"
@@ -66,7 +62,6 @@ export default function LandingPage() {
                     name="email"
                     placeholder="Il tuo indirizzo email"
                     required
-                    // Alteração: Adicionado placeholder-gray-500 para melhor contraste e legibilidade
                     className="w-full sm:w-auto flex-grow px-4 py-3 mb-2 sm:mb-0 sm:mr-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D4AF37] placeholder-gray-500"
                 />
                 <button
@@ -77,13 +72,12 @@ export default function LandingPage() {
                 </button>
             </form>
           </div>
-
-          {/* Rodapé */}
-          <footer className="mt-16">
-            <p className="text-sm text-gray-500">&copy; 2025 Lare.homes - Tutti i diritti riservati.</p>
-          </footer>
-
         </main>
+
+        {/* Rodapé */}
+        <footer className="fixed bottom-0 left-0 w-full bg-[#f8f7f4] z-20 py-4">
+          <p className="text-sm text-gray-500 text-center">&copy; 2025 Lare - Tutti i diritti riservati.</p>
+        </footer>
       </div>
     </>
   );
