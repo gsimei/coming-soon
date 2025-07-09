@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-
 import Head from 'next/head';
 
 export default function LandingPage() {
@@ -11,9 +10,12 @@ export default function LandingPage() {
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Lare - In Arrivo</title>
+        {/* Adicionado uma meta description para melhor SEO */}
+        <meta name="description" content="Lare è la piattaforma digitale che restituisce tranquillità e controllo ai proprietari di casa. In arrivo." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+        {/* O style jsx global não é estritamente necessário se você configurar as fontes no seu ficheiro global.css, mas funciona bem aqui. */}
         <style jsx global>{`
           body {
             font-family: 'Inter', sans-serif;
@@ -35,9 +37,10 @@ export default function LandingPage() {
 
         <main className="w-full max-w-2xl text-center z-10">
 
-          {/* Logo */}
-          <div className="mb-24 flex justify-center items-center w-full mx-auto">
-            <Image src="/logo.png" alt="Logo Lare" width={200} height={200} className="size-60 object-contain" />
+          {/* Logo - Espaçamento ajustado para melhor equilíbrio visual */}
+          <div className="mb-16 flex justify-center items-center w-full mx-auto">
+            {/* Componente Image otimizado */}
+            <Image src="/logo.png" alt="Logo Lare" width={200} height={200} className="size-60 object-contain" priority />
           </div>
 
           {/* Título Principal */}
@@ -60,10 +63,11 @@ export default function LandingPage() {
             >
                 <input
                     type="email"
-                    name="email" // O atributo 'name' é essencial para o Formspree
+                    name="email"
                     placeholder="Il tuo indirizzo email"
                     required
-                    className="w-full sm:w-auto flex-grow px-4 py-3 mb-2 sm:mb-0 sm:mr-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
+                    // Alteração: Adicionado placeholder-gray-500 para melhor contraste e legibilidade
+                    className="w-full sm:w-auto flex-grow px-4 py-3 mb-2 sm:mb-0 sm:mr-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D4AF37] placeholder-gray-500"
                 />
                 <button
                     type="submit"
