@@ -1,103 +1,86 @@
+"use client";
+
 import Image from "next/image";
 
-export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+import Head from 'next/head';
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+export default function LandingPage() {
+  return (
+    <>
+      <Head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Lare - In Arrivo</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+        <style jsx global>{`
+          body {
+            font-family: 'Inter', sans-serif;
+          }
+          .font-serif-display {
+            font-family: 'Playfair Display', serif;
+          }
+          .bg-pattern {
+            background-color: #f8f7f4;
+            opacity: 0.8;
+            background-image:  linear-gradient(#9B1C1C 1px, transparent 1px), linear-gradient(to right, #9B1C1C 1px, #f8f7f4 1px);
+            background-size: 20px 20px;
+          }
+        `}</style>
+      </Head>
+
+      <div className="bg-[#f8f7f4] text-[#1A2B42] flex items-center justify-center min-h-screen p-4">
+        <div className="absolute inset-0 bg-pattern opacity-10"></div>
+
+        <main className="w-full max-w-2xl text-center z-10">
+
+          {/* Logo */}
+          <div className="mb-24 flex justify-center items-center w-full mx-auto">
+            <Image src="/logo.png" alt="Logo Lare" width={200} height={200} className="size-60 object-contain" />
+          </div>
+
+          {/* Título Principal */}
+          <h1 className="font-serif-display text-4xl md:text-6xl font-bold text-[#1A2B42] leading-tight">
+            La gestione immobiliare sta per cambiare.
+          </h1>
+
+          {/* Subtítulo */}
+          <p className="mt-6 text-lg md:text-xl text-gray-600 max-w-xl mx-auto">
+            Lare è la piattaforma digitale che restituisce tranquillità e controllo ai proprietari di casa. Stiamo costruendo un guardiano digitale per il tuo patrimonio.
+          </p>
+
+          {/* Formulário de Captura de Email com Formspree */}
+          <div className="mt-12">
+            <p className="mb-4 font-semibold">Sii tra i primi a scoprirlo.</p>
+            <form
+              className="flex flex-col sm:flex-row justify-center max-w-md mx-auto"
+              action="https://formspree.io/f/mrbkwdoa"
+              method="POST"
+            >
+                <input
+                    type="email"
+                    name="email" // O atributo 'name' é essencial para o Formspree
+                    placeholder="Il tuo indirizzo email"
+                    required
+                    className="w-full sm:w-auto flex-grow px-4 py-3 mb-2 sm:mb-0 sm:mr-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
+                />
+                <button
+                    type="submit"
+                    className="bg-[#9B1C1C] text-white font-bold px-8 py-3 rounded-md hover:bg-opacity-90 transition-colors duration-300"
+                >
+                    Rimani Aggiornato
+                </button>
+            </form>
+          </div>
+
+          {/* Rodapé */}
+          <footer className="mt-16">
+            <p className="text-sm text-gray-500">&copy; 2025 Lare.homes - Tutti i diritti riservati.</p>
+          </footer>
+
+        </main>
+      </div>
+    </>
   );
 }
